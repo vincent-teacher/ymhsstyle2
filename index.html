@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>楊梅高中梅岡風</title>
+<meta name="description" content="桃園市立楊梅高級中等學校校刊《梅岡風》數位典藏：線上瀏覽、全文檢索歷期版面。">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+
+<!-- 飄落梅花動畫層 -->
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#/" title="回首頁">
+      <img class="emblem" src="img/emblem.png" alt="楊梅高中校徽">
+      <span class="brand-text">
+        <span class="brand-school">楊梅高中</span>
+        <img class="brand-logo" src="img/logo.png" alt="梅岡風">
+      </span>
+    </a>
+    <nav class="nav" aria-label="主選單">
+      <a href="#/" data-nav="home"><span class="ic">🏠</span>首頁</a>
+      <a href="#/issues" data-nav="issues"><span class="ic">📚</span>歷期瀏覽</a>
+      <a href="#/search" data-nav="search"><span class="ic">🔍</span>全文檢索</a>
+      <a href="#/timeline" data-nav="timeline"><span class="ic">🕰️</span>時光軸</a>
+      <a href="#/game" data-nav="game"><span class="ic">🎲</span>猜猜第幾期</a>
+      <a href="#/me" data-nav="me"><span class="ic">🏅</span>我的足跡</a>
+    </nav>
+    <form class="quick" id="quickSearch" role="search">
+      <input id="quickQ" type="search" placeholder="搜尋歷期內容…（按 / ）" aria-label="搜尋">
+      <button type="submit" aria-label="搜尋">🔍</button>
+    </form>
+    <button class="icon-btn" id="btnSettings" aria-label="設定" title="設定">⚙️</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <img src="img/emblem.png" alt="" class="foot-emblem">
+    <div>
+      <p><strong>桃園市立楊梅高級中等學校　校刊《梅岡風》數位典藏</strong></p>
+      <p class="muted" id="footStat"></p>
+    </div>
+    <a class="toTop" href="#main" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ 回頂端</a>
+  </div>
+</footer>
+
+<!-- 設定面板 -->
+<div class="drawer" id="settings" hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+    <div class="drawer-head">
+      <h2 id="setTitle">⚙️ 閱讀設定</h2>
+      <button class="icon-btn" data-close aria-label="關閉">✕</button>
+    </div>
+    <div class="set-list" id="setList"></div>
+    <div class="set-row">
+      <span>字體大小</span>
+      <div class="seg" id="fontSeg">
+        <button data-f="0">標準</button><button data-f="1">大</button><button data-f="2">特大</button>
+      </div>
+    </div>
+    <div class="set-row">
+      <span>音量</span>
+      <input type="range" id="vol" min="0" max="100" aria-label="音量">
+    </div>
+    <p class="muted small">設定會自動儲存在這台電腦的瀏覽器中。</p>
+  </div>
+</div>
+
+<div id="toasts" aria-live="polite"></div>
+
+<script src="data/issues.js?v=1790527867"></script>
+<script src="app.js"></script>
+</body>
+</html>
